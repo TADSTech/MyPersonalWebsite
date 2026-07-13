@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudoTADS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">SudoTADS</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <p class="tag">$ whoami</p>
+
+            <h1>Michael.</h1>
+
+            <h2>I build software, automate things and occasionally survive university.</h2>
+
+            <p>
+                Mathematics student from Nigeria creating open-source tools,
+                AI experiments and products that solve real problems.
+            </p>
+
+            <button id="hello-btn">
+                Say Hello
+            </button>
+
+        </section>
+
+        <section class="about">
+
+            <h3>About</h3>
+
+            <p>
+                Hi, I'm Michael, better known online as <span>SudoTADS</span>.
+                I enjoy building weird ideas, shipping hackathon projects,
+                contributing to open source and documenting everything I learn.
+            </p>
+
+        </section>
+
+        <section class="stats">
+
+            <div class="card">
+                <h2>10+</h2>
+                <p>Projects Built</p>
+            </div>
+
+            <div class="card">
+                <h2>4.5★</h2>
+                <p>University CGPA</p>
+            </div>
+
+            <div class="card">
+                <h2>Finalist</h2>
+                <p>Cavista Hackathon</p>
+            </div>
+
+            <div class="card">
+                <h2>Open Source</h2>
+                <p>Builder</p>
+            </div>
+
+        </section>
+
+    </main>
+    <div class="corner-zone zone-tl"></div>
+    <div class="corner-panel panel-tl">
+    <div class="term-window">
+        <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+        <div class="term-body">
+        <p><span class="prompt">SudoTADS@dev:~$</span> whoami</p>
+        <p class="cmd-out">&gt; Michael Tunwashe</p>
+        <p class="cmd-out">&gt; Founder <span class="green">@ LunixDV</span></p>
+        <p class="cmd-out">&gt; Mathematics, UNILAG</p>
+        <p class="sep"></p>
+        <p><span class="prompt">SudoTADS@dev:~$</span> <span class="cursor-blink">▊</span></p>
+        </div>
+    </div>
+    </div>
+
+    <div class="corner-zone zone-tr"></div>
+    <div class="corner-panel panel-tr">
+    <div class="status-card">
+        <p class="status-title">Status Board</p>
+        <div class="status-row"><span class="status-label">Projects</span><span class="status-val">10+</span></div>
+        <div class="status-row"><span class="status-label">Status</span><span class="status-val green">Building...</span></div>
+        <div class="status-row"><span class="status-label">Focus</span><span class="status-val">Data Engineering</span></div>
+        <div class="status-row"><span class="status-label">Corners</span><span class="status-val" id="corner-count">1 / 4</span></div>
+    </div>
+    </div>
+
+    <div class="corner-zone zone-bl"></div>
+    <div class="corner-panel panel-bl">
+    <div class="dyk-card" id="dyk-card">
+        <div class="dyk-badge">DID YOU KNOW?</div>
+        <p class="dyk-text" id="dyk-text">I'm currently studying Mandarin Chinese</p>
+    </div>
+    </div>
+
+    <div class="corner-zone zone-br"></div>
+    <div class="corner-panel panel-br">
+    <div class="nav-card">
+        <a href="https://github.com/TADSTech" target="_blank" class="nav-link">[ GitHub ]</a>
+        <a href="https://linkedin.com/in/tadstech" target="_blank" class="nav-link">[ LinkedIn ]</a>
+        <a href="mailto:motrenewed@gmail.com" class="nav-link">[ Email ]</a>
+        <a href="/resume.pdf" download class="nav-link">[ Resume ]</a>
+        <p class="uptime">Session: <span id="uptime-count">∞</span></p>
+    </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+

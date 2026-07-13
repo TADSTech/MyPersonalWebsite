@@ -1,0 +1,346 @@
+:root{
+    --bg:#000;
+    --fg:#fff;
+    --accent:#9AFD08;
+    --card:#111;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:2rem 8%;
+}
+
+.logo{
+    color:var(--accent);
+    font-weight:bold;
+    font-size:1.2rem;
+}
+
+nav{
+    display:flex;
+    gap:2rem;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+main{
+    width:min(1100px,90%);
+    margin:auto;
+}
+
+.hero{
+    min-height:65vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:1rem;
+}
+
+.tag{
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:.2rem;
+}
+
+.hero h1{
+    font-size:clamp(4rem,10vw,7rem);
+}
+
+.hero h2{
+    font-weight:normal;
+    color:#ddd;
+}
+
+.hero p{
+    max-width:650px;
+    line-height:1.7;
+    color:#bbb;
+}
+
+button{
+    width:fit-content;
+    margin-top:1rem;
+    padding:1rem 1.5rem;
+    background:var(--accent);
+    color:black;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.about{
+    margin:6rem 0;
+}
+
+.about h3{
+    margin-bottom:1rem;
+    color:var(--accent);
+}
+
+.about span{
+    color:var(--accent);
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1rem;
+    margin-bottom:5rem;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid #222;
+    padding:2rem;
+}
+
+.card h2{
+    color:var(--accent);
+    margin-bottom:.5rem;
+}
+
+/* ══════════════════════════════════════════════════════════
+   CORNER EASTER EGGS
+   ══════════════════════════════════════════════════════════ */
+
+.corner-zone {
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  z-index: 98;
+  cursor: default;
+}
+
+.zone-tl { top: 0; left: 0; }
+.zone-tr { top: 0; right: 0; }
+.zone-bl { bottom: 0; left: 0; }
+.zone-br { bottom: 0; right: 0; }
+
+.corner-panel {
+  position: fixed;
+  z-index: 99;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  transform: translateY(8px);
+}
+
+/* ── hover triggers ── */
+.zone-tl:hover ~ .panel-tl,
+.zone-tr:hover ~ .panel-tr,
+.zone-bl:hover ~ .panel-bl,
+.zone-br:hover ~ .panel-br,
+.panel-tl:hover,
+.panel-tr:hover,
+.panel-bl:hover,
+.panel-br:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ── TOP-LEFT: Terminal Console ── */
+.panel-tl {
+  top: 12px;
+  left: 12px;
+}
+
+.term-window {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 8px;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.term-bar {
+  background: #151515;
+  padding: 8px 12px;
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid #222;
+}
+
+.term-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #555;
+}
+
+.term-body {
+  padding: 14px;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.prompt {
+  color: var(--accent);
+}
+
+.cmd-out {
+  color: #aaa;
+  padding-left: 1.2rem;
+}
+
+.green {
+  color: var(--accent);
+}
+
+.sep {
+  height: 6px;
+}
+
+.cursor-blink {
+  color: var(--accent);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── TOP-RIGHT: Status Board ── */
+.panel-tr {
+  top: 12px;
+  right: 12px;
+}
+
+.status-card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 16px;
+  width: 200px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.status-title {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+}
+
+.status-row:last-child {
+  margin-bottom: 0;
+}
+
+.status-label {
+  color: #888;
+}
+
+.status-val {
+  color: #ddd;
+}
+
+/* ── BOTTOM-LEFT: Did You Know Vault ── */
+.panel-bl {
+  bottom: 12px;
+  left: 12px;
+}
+
+.dyk-card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 16px;
+  width: 240px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.dyk-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.dyk-text {
+  font-size: 0.78rem;
+  color: #bbb;
+  line-height: 1.5;
+  transition: opacity 0.3s ease;
+}
+
+/* ── BOTTOM-RIGHT: Nav Terminal ── */
+.panel-br {
+  bottom: 12px;
+  right: 12px;
+}
+
+.nav-card {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 14px;
+  width: 180px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.nav-link {
+  display: block;
+  color: var(--accent);
+  text-decoration: none;
+  padding: 6px 0;
+  font-size: 0.78rem;
+  transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+.uptime {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #222;
+  font-size: 0.65rem;
+  color: #555;
+}
+
+/* ── corner hints (tiny indicators) ── */
+.panel-tl::before {
+  content: '$';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  font-size: 0.7rem;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.zone-tl:hover ~ .panel-tl::before {
+  color: var(--accent);
+}
