@@ -1,13 +1,9 @@
-/* ══════════════════════════════════════════════════════════
-   TERMINAL EMULATOR | SudoTADS v1.0
-   ══════════════════════════════════════════════════════════ */
-
 (function() {
   'use strict';
 
   const COMMANDS = {};
 
-  // ── Utilities ──
+  // ── UtilS ──
 
   function timestamp() {
     return new Date().toLocaleTimeString();

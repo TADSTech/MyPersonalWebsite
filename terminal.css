@@ -1,7 +1,3 @@
-/* ══════════════════════════════════════════════════════════
-   TERMINAL OVERLAY + TOAST + FAB
-   ══════════════════════════════════════════════════════════ */
-
 /* ── Full-screen Terminal ── */
 .terminal-overlay {
   position: fixed;
