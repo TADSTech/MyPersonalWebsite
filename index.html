@@ -3,131 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SudoTADS</title>
+    <title>SudoTADS — Michael Tunwashe</title>
+    <meta name="description" content="Michael Tunwashe (SudoTADS) — Mathematics student, data & systems engineer, open-source builder.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="terminal.css">
 </head>
 <body>
 
+    <!-- ═══ HEADER ═══ -->
     <header>
         <div class="logo">SudoTADS</div>
-
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="#about">About</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#projects">Work</a>
+            <a href="#blog">Blog</a>
         </nav>
     </header>
 
-    <main>
+    <!-- ═══ HERO — 100vh ═══ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <filter id="blob-filter">
+                        <feGaussianBlur stdDeviation="80" result="blur" />
+                        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.25 0" />
+                    </filter>
+                    <filter id="blob-filter-2">
+                        <feGaussianBlur stdDeviation="60" result="blur" />
+                        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.12 0" />
+                    </filter>
+                </defs>
+                <circle class="blob blob-1" cx="200" cy="400" r="160" fill="#9AFD08" filter="url(#blob-filter)" />
+                <circle class="blob blob-2" cx="950" cy="250" r="220" fill="#FFFFFF" filter="url(#blob-filter-2)" />
+                <circle class="blob blob-3" cx="600" cy="550" r="180" fill="#9AFD08" filter="url(#blob-filter)" />
+                <circle class="blob blob-4" cx="100" cy="650" r="120" fill="#FFFFFF" filter="url(#blob-filter-2)" />
+                <circle class="blob blob-5" cx="1050" cy="650" r="140" fill="#9AFD08" filter="url(#blob-filter)" />
+            </svg>
+        </div>
 
-        <section class="hero">
-
-            <p class="tag">$ whoami</p>
-
-            <h1>Michael.</h1>
-
+        <div class="hero-content">
+            <p class="tag" id="term-trigger">$ whoami <span class="tag-hint">[open terminal]</span></p>
+            <h1>Michael<span class="accent">.</span></h1>
             <h2>I build software, automate things and occasionally survive university.</h2>
+            <p>Mathematics student from Nigeria creating open-source tools, AI experiments and products that solve real problems.</p>
+            <button id="hello-btn">Say Hello</button>
+            <div class="kb-hint"><kbd>Ctrl</kbd> + <kbd>`</kbd> <span class="kb-hint-label">terminal</span></div>
+        </div>
+    </section>
 
-            <p>
-                Mathematics student from Nigeria creating open-source tools,
-                AI experiments and products that solve real problems.
-            </p>
-
-            <button id="hello-btn">
-                Say Hello
-            </button>
-
-        </section>
-
-        <section class="about">
-
-            <h3>About</h3>
-
-            <p>
-                Hi, I'm Michael, better known online as <span>SudoTADS</span>.
-                I enjoy building weird ideas, shipping hackathon projects,
-                contributing to open source and documenting everything I learn.
-            </p>
-
-        </section>
-
-        <section class="stats">
-
-            <div class="card">
-                <h2>10+</h2>
-                <p>Projects Built</p>
+    <!-- ═══ ABOUT ═══ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <span class="section-label">/about</span>
+                    <h3>Mathematics meets&nbsp;code.</h3>
+                    <p>Hi, I'm Michael, better known online as <span class="highlight">SudoTADS</span> aliased as <span style="color:aliceblue">TADSTech</span>. I build weird ideas at 2 AM, ship hackathon projects before the deadline, contribute to open source, and document everything I learn along the way.</p>
+                    <p>Currently surviving a Mathematics degree at the University of Lagos while building LunixDV — a privacy-first AI tools studio. Also learning Mandarin. Slowly.</p>
+                </div>
+                <div class="about-blob">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="blob-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#9AFD08" stop-opacity="0.2" />
+                                <stop offset="100%" stop-color="#9AFD08" stop-opacity="0.05" />
+                            </linearGradient>
+                        </defs>
+                        <path id="morph-blob" d="M 100,20 C 140,20 180,60 180,100 C 180,140 140,180 100,180 C 60,180 20,140 20,100 C 20,60 60,20 100,20 Z" fill="url(#blob-grad)" stroke="#9AFD08" stroke-width="1" />
+                    </svg>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <h2>4.5★</h2>
-                <p>University CGPA</p>
+    <!-- ═══ HOBBIES ═══ -->
+    <section class="hobbies" id="hobbies">
+        <div class="geo-dots geo-dots-1"></div>
+        <div class="geo-dots geo-dots-2"></div>
+        <div class="container">
+            <span class="section-label" style="text-align:center; display:block;">/interests</span>
+            <h3>Hobbies &amp; Interests</h3>
+            <div class="hobby-grid">
+                <div class="hobby-card">
+                    <div class="hobby-icon">&#x1F4BB;</div>
+                    <h4>Coding &amp; Open Source</h4>
+                    <p>Building weird ideas at 2 AM, shipping hackathon projects, sending PRs to random repos at midnight.</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">&#x1F004;</div>
+                    <h4>Mandarin Chinese</h4>
+                    <p>&#x6211;&#x5728;&#x5B66;&#x4E60;&#x4E2D;&#x6587;&#x3002; &#x6BCF;&#x5929;&#x8FDB;&#x6B65;&#x4E00;&#x70B9;&#x70B9;&#x3002; &#x6162;&#x6162;&#x6765;&#xFF0C;&#x6BD4;&#x8F83;&#x5FEB;&#x3002;</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">&#x1F3B5;</div>
+                    <h4>Music &amp; Production</h4>
+                    <p>Ableton, MPC beats, sampling vinyl records. Making noise sound intentional, one track at a time.</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">&#x265F;</div>
+                    <h4>Gaming &amp; Chess</h4>
+                    <p>Chess.com blitz, FPS campaigns, losing confidently to 1400-rated bots. It's about the journey.</p>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon">&#x1F4F7;</div>
+                    <h4>Street Photography</h4>
+                    <p>Lagos streets, golden hour light, finding geometry in urban chaos. One frame at a time.</p>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <h2>Finalist</h2>
-                <p>Cavista Hackathon</p>
+    <!-- ═══ STATS ═══ -->
+    <section class="stats" id="stats">
+        <div class="stat-card">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">4.3&#9733;</span>
+            <span class="stat-label">University CGPA</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">Finalist</span>
+            <span class="stat-label">Cavista Hackathon</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">&#8734;</span>
+            <span class="stat-label">Open Source</span>
+        </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <span class="section-label" style="text-align:center; display:block;">/work</span>
+            <h3>What I've Built</h3>
+            <div class="project-list">
+                <div class="project-item">
+                    <h4>WXATA</h4>
+                    <p>WhatsApp automation platform</p>
+                    <div class="tech-tags"><span>Bun</span><span>TypeScript</span><span>React</span></div>
+                </div>
+                <div class="project-item">
+                    <h4>BRIS</h4>
+                    <p>ETL platform with Markov chain NLP</p>
+                    <div class="tech-tags"><span>FastAPI</span><span>PostgreSQL</span><span>DuckDB</span></div>
+                </div>
+                <div class="project-item">
+                    <h4>Centaur</h4>
+                    <p>Trading API &amp; ML lifecycle</p>
+                    <div class="tech-tags"><span>Python</span><span>FastAPI</span><span>Redis</span></div>
+                </div>
+                <div class="project-item">
+                    <h4>ClauseZero</h4>
+                    <p>AI-powered legal auditor &mdash; LunixDV</p>
+                    <div class="tech-tags"><span>Rust</span><span>LLM</span><span>RAG</span></div>
+                </div>
+                <div class="project-item">
+                    <h4>Tairesume</h4>
+                    <p>AI resume builder</p>
+                    <div class="tech-tags"><span>Next.js</span><span>Python</span><span>OpenAI</span></div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="card">
-                <h2>Open Source</h2>
-                <p>Builder</p>
+    <!-- ═══ BLOG ═══ -->
+    <section class="blog" id="blog">
+        <div class="container">
+            <span class="section-label" style="text-align:center; display:block;">/writing</span>
+            <h3>Devlogs &amp; Writing</h3>
+            <div class="blog-grid">
+
+                <div class="blog-card expandable" onclick="toggleBlog(this)">
+                    <span class="blog-badge">Latest</span>
+                    <span class="blog-meta">Devlog #2 &amp; #3</span>
+                    <h4>It Finally Looks Like a Website (with some eggs)</h4>
+                    <p class="blog-preview">Yesterday, I had three files and a button. Today it looks like something I'd send someone.</p>
+                    <div class="blog-body">
+                        <p>Yesterday, I had three files and a button.</p>
+                        <p>Today, the site is live at <strong>tadstech.github.io/MyPersonalWebsite</strong> and it actually looks like something I'd send someone.</p>
+                        <p>I added a proper navigation bar, a hero section, an About section, and stats cards. Still no frameworks. No build tools. No animations. The only JavaScript is a button that cycles messages. I want to earn every line of JS instead of adding things because I can.</p>
+                        <p class="blog-subhead">The corners</p>
+                        <p>Then I got curious about what happens when someone actually explores.</p>
+                        <p>I hid four panels at the edges of the viewport. They're invisible until you wander your mouse into a corner. Then they slide open. (Mobile excluded for now but on its way.)</p>
+                        <p>Deployed to GitHub Pages so anyone can find them. The site still has empty space, but it doesn't feel unfinished. It feels like a house that rewards people who bother to peek in the corners.</p>
+                        <p>See you in Devlog #4.</p>
+                    </div>
+                    <span class="blog-toggle">Read more</span>
+                </div>
+
+                <div class="blog-card expandable" onclick="toggleBlog(this)">
+                    <span class="blog-meta">Devlog #001</span>
+                    <h4>The First Files</h4>
+                    <p class="blog-preview">Three files: index.html, style.css, script.js. That's it.</p>
+                    <div class="blog-body">
+                        <p>Started building my personal website today. No frameworks. No animations. No fancy effects. Just three files: index.html, style.css, script.js.</p>
+                        <p>Right now it doesn't do much. Black, white, neon green. A simple landing page. One JavaScript button that says hello.</p>
+                        <p>Sometimes the hardest part isn't solving hard problems. It's just starting. I started today. Hope to scale this into something interesting.</p>
+                    </div>
+                    <span class="blog-toggle">Read more</span>
+                </div>
+
+                <div class="blog-card expandable" onclick="toggleBlog(this)">
+                    <span class="blog-meta">Devlog #4</span>
+                    <h4>The Terminal, The Phone, and Everything In Between</h4>
+                    <p class="blog-preview">Full terminal overlay, mobile optimization, shake-to-open. The corners go touch-friendly.</p>
+                    <div class="blog-body">
+                        <p>The site had a solid core — hero, about, stats, hidden corners. But it was desktop-only. The corners relied on hover. On a phone you'd see nothing.</p>
+                        <p>Not anymore.</p>
+                        <p class="blog-subhead">Mobile optimization</p>
+                        <p>Layout stacks at 768px and 480px. Grids collapse to single column. Fonts scale down. Nothing breaks.</p>
+                        <p class="blog-subhead">The corners go touch-friendly</p>
+                        <p>Hover doesn't exist on a phone. So corner zones now respond to taps. Tap a corner → panel slides open. Tap outside → it closes. Auto-hides after 4 seconds.</p>
+                        <p class="blog-subhead">The full terminal experience</p>
+                        <p>Press <strong>Ctrl + `</strong> anywhere and a full-screen terminal slides down. Title bar with traffic-light dots. Green-on-black output. Blinking prompt. Command history with arrow keys. Tab autocomplete. 25+ commands including <code>whoami</code>, <code>neofetch</code>, <code>matrix</code>, <code>cowsay</code>, <code>ping</code>, <code>theme</code>, and more.</p>
+                        <p class="blog-subhead">Shake to open (mobile)</p>
+                        <p>On a phone, shake it and the terminal opens. Uses the DeviceMotion API. A deliberate shake triggers it, a normal bump won't.</p>
+                        <p>Everything ships as static files. No framework. No build step. Just HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <span class="blog-toggle">Read more</span>
+                </div>
+
+                <a href="https://stardance.hackclub.com/@TADSTech/projects" target="_blank" class="blog-card stardance">
+                    <span class="blog-meta">External</span>
+                    <h4>Stardance Profile &#x2197;</h4>
+                    <p>More projects, experiments, and builds on my Stardance portfolio from Hack Club.</p>
+                </a>
+
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="https://github.com/TADSTech" target="_blank">[ GitHub ]</a>
+                    <a href="https://linkedin.com/in/tadstech" target="_blank">[ LinkedIn ]</a>
+                    <a href="mailto:motrenewed@gmail.com">[ Email ]</a>
+                    <a href="resume.pdf" download>[ Resume ]</a>
+                    <a href="https://youtube.com/@sudotads" target="_blank">[ YouTube ]</a>
+                    <a href="https://instagram.com/sudotads" target="_blank">[ Instagram ]</a>
+                    <a href="https://tiktok.com/@sudotads" target="_blank">[ TikTok ]</a>
+                </div>
+                <p class="footer-tagline">math &bull; data &bull; automation &mdash; @sudotads</p>
+                <p class="footer-prompt">SudoTADS@dev:~$ <span class="cursor-blink">&#x258A;</span></p>
+                <p class="footer-copy">&copy; 2026 Michael Tunwashe</p>
+            </div>
+        </div>
+    </footer>
 
-    </main>
+    <!-- ═══ CORNER ZONES ═══ -->
     <div class="corner-zone zone-tl"></div>
     <div class="corner-panel panel-tl">
-    <div class="term-window">
-        <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
-        <div class="term-body">
-        <p><span class="prompt">SudoTADS@dev:~$</span> whoami</p>
-        <p class="cmd-out">&gt; Michael Tunwashe</p>
-        <p class="cmd-out">&gt; Founder <span class="green">@ LunixDV</span></p>
-        <p class="cmd-out">&gt; Mathematics, UNILAG</p>
-        <p class="sep"></p>
-        <p><span class="prompt">SudoTADS@dev:~$</span> <span class="cursor-blink">▊</span></p>
+        <div class="term-window">
+            <div class="term-bar"><span class="term-dot"></span><span class="term-dot"></span><span class="term-dot"></span></div>
+            <div class="term-body">
+                <p><span class="prompt">SudoTADS@dev:~$</span> whoami</p>
+                <p class="cmd-out">&gt; Michael Tunwashe</p>
+                <p class="cmd-out">&gt; Founder <span class="green">@ LunixDV</span></p>
+                <p class="cmd-out">&gt; Mathematics, UNILAG</p>
+                <p class="sep"></p>
+                <p><span class="prompt">SudoTADS@dev:~$</span> <span class="cursor-blink">&#x258A;</span></p>
+            </div>
         </div>
-    </div>
     </div>
 
     <div class="corner-zone zone-tr"></div>
     <div class="corner-panel panel-tr">
-    <div class="status-card">
-        <p class="status-title">Status Board</p>
-        <div class="status-row"><span class="status-label">Projects</span><span class="status-val">10+</span></div>
-        <div class="status-row"><span class="status-label">Status</span><span class="status-val green">Building...</span></div>
-        <div class="status-row"><span class="status-label">Focus</span><span class="status-val">Data Engineering</span></div>
-        <div class="status-row"><span class="status-label">Corners</span><span class="status-val" id="corner-count">1 / 4</span></div>
-    </div>
+        <div class="status-card">
+            <p class="status-title">Status Board</p>
+            <div class="status-row"><span class="status-label">Projects</span><span class="status-val">10+</span></div>
+            <div class="status-row"><span class="status-label">Status</span><span class="status-val green">Building...</span></div>
+            <div class="status-row"><span class="status-label">Focus</span><span class="status-val">Data Engineering</span></div>
+            <div class="status-row"><span class="status-label">Corners</span><span class="status-val" id="corner-count">1 / 4</span></div>
+        </div>
     </div>
 
     <div class="corner-zone zone-bl"></div>
     <div class="corner-panel panel-bl">
-    <div class="dyk-card" id="dyk-card">
-        <div class="dyk-badge">DID YOU KNOW?</div>
-        <p class="dyk-text" id="dyk-text">I'm currently studying Mandarin Chinese</p>
-    </div>
+        <div class="dyk-card" id="dyk-card">
+            <div class="dyk-badge">DID YOU KNOW?</div>
+            <p class="dyk-text" id="dyk-text">I'm currently studying Mandarin Chinese</p>
+        </div>
     </div>
 
     <div class="corner-zone zone-br"></div>
     <div class="corner-panel panel-br">
-    <div class="nav-card">
-        <a href="https://github.com/TADSTech" target="_blank" class="nav-link">[ GitHub ]</a>
-        <a href="https://linkedin.com/in/tadstech" target="_blank" class="nav-link">[ LinkedIn ]</a>
-        <a href="mailto:motrenewed@gmail.com" class="nav-link">[ Email ]</a>
-        <a href="/resume.pdf" download class="nav-link">[ Resume ]</a>
-        <p class="uptime">Session: <span id="uptime-count">∞</span></p>
+        <div class="nav-card">
+            <a href="https://github.com/TADSTech" target="_blank" class="nav-link">[ GitHub ]</a>
+            <a href="https://linkedin.com/in/tadstech" target="_blank" class="nav-link">[ LinkedIn ]</a>
+            <a href="mailto:motrenewed@gmail.com" class="nav-link">[ Email ]</a>
+            <a href="resume.pdf" download class="nav-link">[ Resume ]</a>
+            <div class="nav-divider"></div>
+            <span class="nav-section-label">Content</span>
+            <a href="https://youtube.com/@sudotads" target="_blank" class="nav-link">[ YouTube ]</a>
+            <a href="https://instagram.com/sudotads" target="_blank" class="nav-link">[ Instagram ]</a>
+            <a href="https://tiktok.com/@sudotads" target="_blank" class="nav-link">[ TikTok ]</a>
+            <p class="nav-tagline">math &bull; data &bull; automation</p>
+            <p class="uptime">Session: <span id="uptime-count">&#x221E;</span></p>
+        </div>
     </div>
-    </div>
-    <script src="script.js"></script>
 
+    <!-- ═══ TOAST ═══ -->
+    <div id="toast" class="toast">
+        <span class="toast-icon">&#x25B6;</span>
+        <span class="toast-text">Press <kbd>Ctrl</kbd> + <kbd>`</kbd> to open terminal</span>
+        <button class="toast-close" id="toast-close">&times;</button>
+    </div>
+
+    <!-- ═══ FAB ═══ -->
+    <button id="term-fab" class="term-fab">&gt;_ Terminal</button>
+
+    <!-- ═══ TERMINAL OVERLAY ═══ -->
+    <div id="terminal" class="terminal-overlay">
+        <div class="term-title-bar">
+            <div class="term-title-dots">
+                <span class="term-title-dot r"></span>
+                <span class="term-title-dot y"></span>
+                <span class="term-title-dot g"></span>
+            </div>
+            <span class="term-title-label">SudoTADS@dev: ~</span>
+        </div>
+        <div id="term-output" class="terminal-output"></div>
+        <div class="term-input-row">
+            <span class="term-prompt">SudoTADS@dev:~$</span>
+            <input type="text" id="term-input" class="term-input" autocomplete="off" spellcheck="false" autocapitalize="off">
+        </div>
+        <canvas id="term-matrix" class="term-matrix"></canvas>
+    </div>
+
+    <!-- ═══ GSAP (CDN) ═══ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- ═══ GSAP ANIMATIONS ═══ -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof gsap === 'undefined') return;
+        gsap.registerPlugin(ScrollTrigger);
+
+        // ── Hero blob morphing loop ──
+        const blobs = [
+            { el: '.blob-1', props: { cx: 350, cy: 250, r: 200 }, duration: 14 },
+            { el: '.blob-2', props: { cx: 800, cy: 450, r: 260 }, duration: 18 },
+            { el: '.blob-3', props: { cx: 500, cy: 600, r: 150 }, duration: 12 },
+            { el: '.blob-4', props: { cx: 200, cy: 700, r: 170 }, duration: 16 },
+            { el: '.blob-5', props: { cx: 950, cy: 350, r: 120 }, duration: 13 },
+        ];
+
+        blobs.forEach(function(b) {
+            gsap.to(b.el, {
+                attr: b.props,
+                duration: b.duration,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+        });
+
+        // ── Hero entrance stagger (above fold, safe to animate from invisible) ──
+        gsap.from('.hero-content > *', {
+            y: 30,
+            opacity: 0,
+            duration: 0.6,
+            stagger: 0.12,
+            delay: 0.2,
+            ease: 'power2.out'
+        });
+
+        // ── About blob SVG morph ──
+        const blobPath = document.getElementById('morph-blob');
+        if (blobPath) {
+            const paths = [
+                'M 100,20 C 140,20 180,60 180,100 C 180,140 140,180 100,180 C 60,180 20,140 20,100 C 20,60 60,20 100,20 Z',
+                'M 100,30 C 150,10 190,70 170,120 C 150,170 110,190 60,170 C 10,150 -10,90 30,50 C 50,20 80,35 100,30 Z',
+                'M 90,25 C 130,15 170,50 175,110 C 180,160 140,185 80,175 C 30,165 10,130 25,70 C 40,30 60,30 90,25 Z',
+                'M 110,15 C 160,25 185,70 170,130 C 155,180 100,190 50,170 C 10,150 10,90 40,50 C 60,30 80,10 110,15 Z',
+            ];
+            var idx = 0;
+            setInterval(function() {
+                idx = (idx + 1) % paths.length;
+                gsap.to(blobPath, {
+                    duration: 3,
+                    attr: { d: paths[idx] },
+                    ease: 'sine.inOut'
+                });
+            }, 4000);
+        }
+
+        // ── Scroll reveals: from() with y-only (no opacity:0) ──
+        // Content is always visible. GSAP just slides it into place for polish.
+        ScrollTrigger.create({
+            trigger: '.about',
+            start: 'top 80%',
+            onEnter: function() {
+                gsap.from('.about-text', { y: 25, duration: 0.7, ease: 'power2.out' });
+                gsap.from('.about-blob', { scale: 0.85, duration: 0.7, delay: 0.15, ease: 'back.out(1.4)' });
+            }
+        });
+
+        ScrollTrigger.create({
+            trigger: '.hobbies',
+            start: 'top 75%',
+            onEnter: function() {
+                gsap.from('.hobby-card', {
+                    y: 30, duration: 0.5, stagger: 0.08, ease: 'power2.out'
+                });
+            }
+        });
+
+        ScrollTrigger.create({
+            trigger: '.stats',
+            start: 'top 85%',
+            onEnter: function() {
+                gsap.from('.stat-card', {
+                    scale: 0.92, duration: 0.4, stagger: 0.08, ease: 'power2.out'
+                });
+            }
+        });
+
+        ScrollTrigger.create({
+            trigger: '.projects',
+            start: 'top 75%',
+            onEnter: function() {
+                gsap.from('.project-item', {
+                    y: 20, duration: 0.5, stagger: 0.08, ease: 'power2.out'
+                });
+            }
+        });
+
+        ScrollTrigger.create({
+            trigger: '.blog',
+            start: 'top 80%',
+            onEnter: function() {
+                gsap.from('.blog-card', {
+                    y: 25, duration: 0.5, stagger: 0.1, ease: 'power2.out'
+                });
+            }
+        });
+
+        // ── Header shrink on scroll ──
+        ScrollTrigger.create({
+            trigger: 'body',
+            start: 'top -80px',
+            onToggle: function(self) {
+                var h = document.querySelector('header');
+                if (h) {
+                    h.style.padding = self.isActive ? '10px 32px' : '16px 32px';
+                    h.style.borderBottomColor = self.isActive ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.06)';
+                }
+            }
+        });
+    });
+    </script>
+
+    <script src="terminal.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
