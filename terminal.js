@@ -3,7 +3,7 @@
 
   const COMMANDS = {};
 
-  // ── UtilS ──
+  // ── Utils ──
 
   function timestamp() {
     return new Date().toLocaleTimeString();
@@ -630,7 +630,7 @@
       }
     };
 
-    // Expose to global for debug
+    // Expose terminal globally
     window.term = term;
   });
 

@@ -78,10 +78,6 @@ if (uptimeEl) {
   }, 1000);
 }
 
-/* ══════════════════════════════════════════════════════════
-   PHASE 4: TOAST + MOBILE CORNERS + SHAKE + FAB
-   ══════════════════════════════════════════════════════════ */
-
 // ── Toast notification ──
 (function() {
   const toast = document.getElementById("toast");
@@ -94,7 +90,7 @@ if (uptimeEl) {
       'Tap <kbd>whoami</kbd> or <kbd>>_</kbd> to open terminal';
   }
 
-  // Show after 1s (every page load — reminders don't hurt)
+  // Show toast after 1s
   const showTimer = setTimeout(() => {
     toast.classList.add("visible");
   }, 1000);
@@ -132,7 +128,6 @@ if (uptimeEl) {
       setTimeout(() => {
         if (window.term) {
           fab.style.display = window.term.visible ? "none" : "";
-          // Re-check on resize
         }
       }, 50);
     }

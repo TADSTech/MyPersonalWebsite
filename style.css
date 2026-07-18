@@ -5,24 +5,20 @@
   initial-value: 0deg;
 }
 
-/* ══════════════════════════════════════════════════════════
-   THEME VARIABLES
-   ══════════════════════════════════════════════════════════ */
+/* ── Theme variables ── */
 :root {
-  --bg: #000000;
-  --text: #FFFFFF;
-  --accent: #9AFD08;
-  --accent-dim: rgba(154, 253, 8, 0.12);
-  --accent-glow: rgba(154, 253, 8, 0.25);
-  --glass-bg: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --surface: #0a0a0a;
+  --bg: oklch(12% 0.008 280);
+  --text: oklch(98% 0.002 280);
+  --accent: oklch(86% 0.18 112);
+  --accent-dim: oklch(86% 0.18 112 / 12%);
+  --accent-glow: oklch(86% 0.18 112 / 25%);
+  --glass-bg: oklch(100% 0 0 / 3%);
+  --glass-border: oklch(100% 0 0 / 8%);
+  --surface: oklch(16% 0.008 280);
   --radius: 12px;
 }
 
-/* ══════════════════════════════════════════════════════════
-   RESET / BASE
-   ══════════════════════════════════════════════════════════ */
+/* ── Reset / base ── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -56,15 +52,13 @@ img { max-width: 100%; display: block; }
 a { color: var(--text); text-decoration: none; transition: color 0.3s; }
 a:hover { color: var(--accent); }
 
-/* ══════════════════════════════════════════════════════════
-   TYPOGRAPHY STUFF
-   ══════════════════════════════════════════════════════════ */
+/* ── Typography ── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
   font-weight: 700;
-  letter-spacing: 0.01em;
-  line-height: 1.15;
-  color: #e2e2e2;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--text);
 }
 
 .container {
@@ -78,14 +72,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #555;
+  color: oklch(65% 0.01 280);
   margin-bottom: 12px;
   display: block;
 }
 
-/* ══════════════════════════════════════════════════════════
-   HEADER
-   ══════════════════════════════════════════════════════════ */
+/* ── Header ── */
 header {
   position: fixed;
   top: 0;
@@ -96,17 +88,18 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
-  background: rgba(0, 0, 0, 0.8);
+  background: oklch(12% 0.008 280 / 80%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
 }
 
 .logo {
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--accent);
-  letter-spacing: 0.05em;
+  letter-spacing: -0.01em;
 }
 
 .logo::before {
@@ -116,42 +109,44 @@ header {
 
 nav {
   display: flex;
-  gap: 24px;
+  gap: 8px;
 }
 
 nav a {
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #888;
+  color: oklch(75% 0.01 280);
   position: relative;
+  padding: 8px 12px;
+  display: inline-block;
 }
 
 nav a::after {
   content: '';
   position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
+  bottom: 0px;
+  left: 12px;
+  right: 12px;
   height: 2px;
   background: var(--accent);
-  transition: width 0.3s;
+  transition: transform 0.3s;
+  transform: scaleX(0);
 }
 
 nav a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 nav a:hover {
   color: var(--text);
 }
 
-/* ══════════════════════════════════════════════════════════
-   HERO
-   ══════════════════════════════════════════════════════════ */
+/* ── Hero ── */
 .hero {
   position: relative;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -184,7 +179,7 @@ nav a:hover {
   align-items: center;
   gap: 8px;
   font-size: 0.82rem;
-  color: #666;
+  color: oklch(75% 0.005 280);
   cursor: pointer;
   padding: 6px 16px;
   border: 1px solid var(--glass-border);
@@ -203,7 +198,7 @@ nav a:hover {
 
 .tag-hint {
   font-size: 0.65rem;
-  color: #444;
+  color: oklch(55% 0.005 280);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -229,7 +224,7 @@ nav a:hover {
 
 .hero > .hero-content > p {
   font-size: 0.85rem;
-  color: #666;
+  color: oklch(75% 0.005 280);
   max-width: 500px;
   margin: 0 auto 32px;
   line-height: 1.7;
@@ -251,13 +246,20 @@ nav a:hover {
 
 #hello-btn:hover {
   background: var(--accent);
-  color: #000;
+  color: oklch(12% 0.008 280);
   box-shadow: 0 0 30px var(--accent-glow);
 }
 
-/* ══════════════════════════════════════════════════════════
-   ABOUT
-   ══════════════════════════════════════════════════════════ */
+#hello-btn:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 4px;
+}
+
+#hello-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── About ── */
 .about {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
@@ -291,7 +293,7 @@ nav a:hover {
 
 .about-text p {
   font-size: 0.88rem;
-  color: #888;
+  color: oklch(80% 0.005 280);
   margin-bottom: 16px;
   line-height: 1.8;
 }
@@ -313,9 +315,7 @@ nav a:hover {
   filter: drop-shadow(0 0 40px var(--accent-dim));
 }
 
-/* ══════════════════════════════════════════════════════════
-   HOBBIES
-   ══════════════════════════════════════════════════════════ */
+/* ── Hobbies ── */
 .hobbies {
   padding: 120px 0;
   position: relative;
@@ -338,35 +338,16 @@ nav a:hover {
   background: var(--surface);
   padding: 32px 28px;
   border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
   transition: all 0.4s;
   cursor: default;
   overflow: hidden;
 }
 
-.hobby-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, transparent 60%, var(--accent-dim));
-  opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
-}
-
-.hobby-card:hover::before {
-  opacity: 1;
-}
-
-.hobby-card:nth-child(1) { clip-path: polygon(0% 0%, 100% 3%, 97% 100%, 3% 97%); }
-.hobby-card:nth-child(2) { clip-path: polygon(3% 0%, 100% 0%, 97% 97%, 0% 100%); }
-.hobby-card:nth-child(3) { clip-path: polygon(0% 3%, 97% 0%, 100% 97%, 3% 100%); }
-.hobby-card:nth-child(4) { clip-path: polygon(0% 0%, 97% 3%, 100% 100%, 3% 97%); }
-.hobby-card:nth-child(5) { clip-path: polygon(3% 3%, 100% 0%, 97% 97%, 0% 100%); }
-
 .hobby-card:hover {
   border-color: var(--accent);
   transform: translateY(-4px) scale(1.02);
-  box-shadow: 0 8px 40px rgba(154, 253, 8, 0.1);
+  box-shadow: 0 8px 40px var(--accent-dim);
 }
 
 .hobby-icon {
@@ -385,18 +366,17 @@ nav a:hover {
 .hobby-card h4 {
   font-size: 1.1rem;
   margin-bottom: 8px;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
 }
 
 .hobby-card p {
   font-size: 0.78rem;
-  color: #666;
+  color: oklch(75% 0.005 280);
   line-height: 1.6;
 }
 
-/* ══════════════════════════════════════════════════════════
-   STATS
-   ══════════════════════════════════════════════════════════ */
+/* ── Stats ── */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -420,6 +400,7 @@ nav a:hover {
   text-align: center;
   background: var(--surface);
   border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
@@ -441,11 +422,6 @@ nav a:hover {
   width: 80%;
 }
 
-.stat-card:nth-child(1) { clip-path: polygon(0% 0%, 100% 0%, 95% 100%, 0% 100%); }
-.stat-card:nth-child(2) { clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 95%); }
-.stat-card:nth-child(3) { clip-path: polygon(0% 5%, 95% 0%, 100% 100%, 5% 100%); }
-.stat-card:nth-child(4) { clip-path: polygon(0% 0%, 100% 5%, 100% 100%, 0% 95%); }
-
 .stat-card:hover {
   background: rgba(154, 253, 8, 0.03);
   border-color: var(--accent-dim);
@@ -453,10 +429,12 @@ nav a:hover {
 
 .stat-number {
   display: block;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
   font-size: 2.5rem;
   color: var(--accent);
   margin-bottom: 8px;
+  letter-spacing: -0.02em;
 }
 
 .stat-label {
@@ -466,9 +444,7 @@ nav a:hover {
   letter-spacing: 0.08em;
 }
 
-/* ══════════════════════════════════════════════════════════
-   PROJECTS / WORK
-   ══════════════════════════════════════════════════════════ */
+/* ── Projects / work ── */
 .projects {
   padding: 120px 0;
   clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);
@@ -491,18 +467,10 @@ nav a:hover {
 .project-item {
   padding: 28px;
   border: 1px solid var(--glass-border);
-  border-radius: 0;
+  border-radius: var(--radius);
   transition: all 0.3s;
   cursor: default;
   position: relative;
-}
-
-.project-item:nth-child(odd) {
-  clip-path: polygon(0% 0%, 100% 5%, 95% 100%, 0% 100%);
-}
-
-.project-item:nth-child(even) {
-  clip-path: polygon(5% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
 
 .project-item:hover {
@@ -518,7 +486,7 @@ nav a:hover {
 
 .project-item p {
   font-size: 0.8rem;
-  color: #666;
+  color: oklch(75% 0.005 280);
   margin-bottom: 12px;
 }
 
@@ -537,9 +505,7 @@ nav a:hover {
   letter-spacing: 0.03em;
 }
 
-/* ══════════════════════════════════════════════════════════
-   BLOG SECT
-   ══════════════════════════════════════════════════════════ */
+/* ── Blog ── */
 .blog {
   padding: 120px 0;
   position: relative;
@@ -563,16 +529,12 @@ nav a:hover {
   padding: 28px;
   background: var(--surface);
   border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
   transition: all 0.4s;
   position: relative;
   overflow: hidden;
   cursor: default;
 }
-
-.blog-card:nth-child(1) { clip-path: polygon(0% 0%, 100% 4%, 96% 100%, 3% 96%); }
-.blog-card:nth-child(2) { clip-path: polygon(4% 0%, 100% 0%, 97% 96%, 0% 100%); }
-.blog-card:nth-child(3) { clip-path: polygon(0% 4%, 96% 0%, 100% 96%, 4% 100%); }
-.blog-card:nth-child(4) { clip-path: polygon(0% 0%, 97% 4%, 100% 100%, 3% 96%); }
 
 .blog-card:hover {
   border-color: var(--accent);
@@ -583,12 +545,13 @@ nav a:hover {
 .blog-card h4 {
   font-size: 1rem;
   margin-bottom: 8px;
-  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
 }
 
 .blog-preview {
   font-size: 0.78rem;
-  color: #666;
+  color: oklch(75% 0.005 280);
   line-height: 1.6;
 }
 
@@ -606,7 +569,7 @@ nav a:hover {
 
 .blog-body p {
   font-size: 0.78rem;
-  color: #777;
+  color: oklch(78% 0.005 280);
   line-height: 1.8;
   margin-top: 14px;
 }
@@ -680,9 +643,7 @@ nav a:hover {
   border-style: solid;
 }
 
-/* ══════════════════════════════════════════════════════════
-   CORNERS
-   ══════════════════════════════════════════════════════════ */
+/* ── Corners ── */
 .corner-zone {
   position: fixed;
   width: 100px;
@@ -924,9 +885,7 @@ nav a:hover {
   letter-spacing: 0.06em;
 }
 
-/* ══════════════════════════════════════════════════════════
-   FOOTER
-   ══════════════════════════════════════════════════════════ */
+/* ── Footer ── */
 footer {
   padding: 60px 0 40px;
   border-top: 1px solid var(--glass-border);
@@ -960,19 +919,26 @@ footer::before {
 
 .footer-links a {
   font-size: 0.78rem;
-  color: #666;
+  color: oklch(70% 0.005 280);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   transition: color 0.3s;
+  padding: 8px 12px;
+  display: inline-block;
 }
 
 .footer-links a:hover {
   color: var(--accent);
 }
 
+.footer-links a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .footer-prompt {
   font-size: 0.82rem;
-  color: #444;
+  color: oklch(65% 0.005 280);
   text-align: center;
 }
 
@@ -982,19 +948,17 @@ footer::before {
 
 .footer-tagline {
   font-size: 0.7rem;
-  color: #444;
+  color: oklch(60% 0.005 280);
   text-align: center;
   letter-spacing: 0.04em;
 }
 
 .footer-copy {
   font-size: 0.65rem;
-  color: #333;
+  color: oklch(50% 0.005 280);
 }
 
-/* ══════════════════════════════════════════════════════════
-   FLOATERS
-   ══════════════════════════════════════════════════════════ */
+/* ── Floaters ── */
 .geo-dots {
   position: absolute;
   pointer-events: none;
@@ -1020,9 +984,7 @@ footer::before {
   background-size: 15px 15px;
 }
 
-/* ══════════════════════════════════════════════════════════
-   RESPONSIVE STUFF
-   ══════════════════════════════════════════════════════════ */
+/* ── Responsive ── */
 @media (max-width: 900px) {
   .about-grid {
     grid-template-columns: 1fr;

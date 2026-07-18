@@ -1,43 +1,92 @@
-# SUDOTADS
+# SudoTADS: Personal Site
 
-## What does it stand for?
+My personal corner of the internet. Built with plain HTML, CSS, and JavaScript (with some cdn exports) that just files that ship straight to a browser without any build steps.
 
-**SUDOTADS** is a mashup of two things.
-
-* **sudo** — the Linux command that lets you do things with elevated privileges.
-* **TADS** — my old online alias from when I was deep into data science and statistics.
-
-Put them together and you get **SUDOTADS**: the name I've stuck with as I've expanded beyond data science into software engineering, open source, automation, AI, and whatever interesting idea I'm building next.
+**Live look:** portfolio + terminal-style easter egg + a few hidden interactions scattered around the page.
 
 ---
 
-## What is this website?
+## What's in here
 
-Honestly?
+A single-page site for myself (Michael, aka SudoTADS 'aliased as' TADSTech) — Mathematics student at the University of Lagos, builder of small tools and occasionally-finished side projects.
 
-It's whatever I need it to be.
+Sections: hero, about, hobbies, a stats strip, project list, and a devlog/blog block. Nothing exotic, just a clean scroll with some GSAP-powered motion on entry.
 
-This started as a simple personal website, but it's slowly becoming a playground for ideas.
+The one thing I actually had fun building is the **terminal**. Press " Ctrl + \` " (or tap the floating button on mobile) and you get a fake shell you can type real commands into:
 
-Some days it's a portfolio.
+```
+help          → list all commands
+whoami        → who I am
+projects      → what I've shipped
+skills        → tech I actually use
+neofetch      → system info, but personalized
+cat [dir]     → read a virtual file
+theme [color] → swap the accent color
+matrix        → toggle the rain effect
+cowsay [msg]  → because why not
+ping / curl   → simulated, not real network calls
+sudo          → does nothing, obviously
+```
 
-Some days it's a blog.
+There's a `history`, `clear`, `exit`, and a handful of other standard-shell commands too, All inspired by the Alacritty terminal back when I was on linux.
+Type `help` inside it for the full list.
 
-Sometimes I build an entire fake terminal because I think it's fun.
+## Tech stack
 
-You'll find my projects, devlogs, experiments, random interactions, and probably a few hidden easter eggs if you look around enough.
+- **HTML/CSS/JS**: no framework, no bundler. Kept it dependency-free on purpose.
+- **GSAP + ScrollTrigger** (via CDN): scroll-triggered animations and the blob morph in the hero.
+- **JetBrains Mono**: the only font on the page, loaded from Google Fonts.
+- **localStorage**: used sparingly, just to remember how many "corners" you've discovered.
 
-The goal isn't to have the most polished portfolio on the internet.
+It's static files you can open with any web server (or literally just double-click `index.html`).
 
-It's to document the journey, ship cool things, and make the website itself feel like one of my projects.
+## File structure
 
-If you're here, poke around.
+```
+.
+├── index.html       # all page markup + inline GSAP setup
+├── style.css         # main site styles, theme variables live here
+├── terminal.css       # styles for the terminal overlay + toast + FAB
+├── script.js          # button interactions, "did you know" rotator, corner counter
+└── terminal.js         # the terminal emulator — command registry + input handling
+```
 
-There's probably more than meets the eye.
+## Running it locally
+
+No install required.
+
+```bash
+git clone <this-repo>
+cd sudotads
+```
+
+Then just open `index.html` in a browser, or serve it if you want relative paths to behave nicer:
+
+```bash
+python3 -m http.server 8000
+# or
+npx serve .
+# or (as a bun supporter)
+bun index.html
+```
+
+## Little details worth knowing
+
+- Four corners of the screen have hidden hover/tap panels — nav links, session uptime, and a rotating "did you know" fact card. There's a counter tracking how many you've found (max 4/4).
+- Shaking your phone (yes, actually) also opens the terminal, if `DeviceMotionEvent` is supported.
+- The toast on load nudges first-time visitors toward the terminal, and dismisses itself once you open it.
+
+## Why it's built this way
+
+Even while there was a lotta Inspo from stuff I've seen online.
+I didn't want a templated portfolio. Most of this exists because I wanted an excuse to write vanilla JS without reaching for a framework, and the terminal specifically because I thought a text-based Easter egg fit better than another "contact me" form.
+
+## Contact
+
+- GitHub: [TADSTech](https://github.com/TADSTech)
+- LinkedIn: [tadstech](https://linkedin.com/in/tadstech)
+- Email: motrenewed@gmail.com
 
 ---
 
-## Technicals
-
-It's just a buncha html, css and JS. I do not think documentation is necessary
-
+*Built and maintained by Michael Tunwashe.*
